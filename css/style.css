@@ -1,132 +1,152 @@
-/* Modern Font Import */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    transition: all 0.3s ease;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    /* Rich Deep Gradient */
-    background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+    font-family: 'Outfit', sans-serif;
+    background: #0f172a; /* Dark base */
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    padding: 20px;
 }
 
-/* Glassmorphism Card with Neon Border */
+/* Main Game Card - Base Style (Laptop/Desktop) */
 div:first-of-type {
-    background: rgba(30, 41, 59, 0.7);
-    backdrop-filter: blur(12px);
-    padding: 3rem;
-    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 24px;
     text-align: center;
-    width: 380px;
-    position: relative;
+    width: 100%;
+    max-width: 450px; /* Laptop size limit */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
 }
 
-/* Heading Styling */
 h1 {
-    color: #f8fafc;
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
 p {
     color: #94a3b8;
-    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+input#guess {
+    width: 100%;
+    max-width: 200px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #3b82f6;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    outline: none;
     margin-bottom: 25px;
 }
 
-/* Input Field with Glow */
-input#guess {
-    width: 100%;
-    background: rgba(15, 23, 42, 0.8);
-    border: 2px solid #334155;
-    border-radius: 12px;
-    padding: 15px;
-    color: #fbbf24; /* Golden color for text */
-    font-size: 2rem;
-    font-weight: 700;
-    text-align: center;
-    outline: none;
-    margin-bottom: 20px;
-}
-
 input#guess:focus {
-    border-color: #38bdf8; /* Cyan Glow */
-    box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    background: rgba(255, 255, 255, 0.15);
 }
 
-/* Premium Button Styling */
 button {
     cursor: pointer;
     font-family: inherit;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
+    font-weight: 600;
+    border-radius: 12px;
+    border: none;
 }
 
-/* Main Check Button */
+/* Check Button */
 button[onclick="check()"] {
+    display: block;
     width: 100%;
     padding: 16px;
-    background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
-    color: #0f172a;
-    border: none;
-    border-radius: 12px;
-    margin-bottom: 10px;
+    background: #3b82f6;
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
 }
 
 button[onclick="check()"]:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.4);
+    background: #2563eb;
+    transform: scale(1.02);
 }
 
-/* Secondary Restart Button */
+/* Restart Button */
 button[onclick="restartGame()"] {
     background: transparent;
     color: #94a3b8;
     border: 1px solid #334155;
     padding: 8px 20px;
-    border-radius: 8px;
-    font-size: 0.8rem;
 }
 
 button[onclick="restartGame()"]:hover {
-    background: rgba(255, 255, 255, 0.05);
-    color: #f8fafc;
-    border-color: #94a3b8;
+    color: #fff;
+    border-color: #fff;
 }
 
-/* Result Area */
 #result {
-    margin-top: 20px;
+    margin-top: 25px;
+    color: #34d399;
     font-size: 1.2rem;
-    font-weight: 600;
-    color: #34d399; /* Emerald Green for success */
     min-height: 1.5em;
 }
 
-/* Footer Style */
+/* Design Credit Text */
 body > p {
     margin-top: 30px;
-    color: #475569;
-    font-size: 0.85rem;
-    font-weight: 400;
+    color: #64748b;
+    font-size: 0.9rem;
 }
 
-#attempts {
-    color: #fbbf24;
+/* --- RESPONSIVE QUERIES --- */
+
+/* Tablet Responsive (max-width: 768px) */
+@media (max-width: 768px) {
+    div:first-of-type {
+        max-width: 400px;
+        padding: 30px;
+    }
+    
+    h1 {
+        font-size: 1.7rem;
+    }
+}
+
+/* Mobile Responsive (max-width: 480px) */
+@media (max-width: 480px) {
+    div:first-of-type {
+        max-width: 90%; /* Phone par screen ke hisab se stretch hoga */
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    input#guess {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    button[onclick="check()"] {
+        padding: 12px;
+        font-size: 1rem;
+    }
 }
