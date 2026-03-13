@@ -1,0 +1,132 @@
+/* Modern Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    /* Rich Deep Gradient */
+    background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Glassmorphism Card with Neon Border */
+div:first-of-type {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(12px);
+    padding: 3rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 380px;
+    position: relative;
+}
+
+/* Heading Styling */
+h1 {
+    color: #f8fafc;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+}
+
+/* Input Field with Glow */
+input#guess {
+    width: 100%;
+    background: rgba(15, 23, 42, 0.8);
+    border: 2px solid #334155;
+    border-radius: 12px;
+    padding: 15px;
+    color: #fbbf24; /* Golden color for text */
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+input#guess:focus {
+    border-color: #38bdf8; /* Cyan Glow */
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+}
+
+/* Premium Button Styling */
+button {
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+/* Main Check Button */
+button[onclick="check()"] {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+    color: #0f172a;
+    border: none;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+button[onclick="check()"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.4);
+}
+
+/* Secondary Restart Button */
+button[onclick="restartGame()"] {
+    background: transparent;
+    color: #94a3b8;
+    border: 1px solid #334155;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+}
+
+button[onclick="restartGame()"]:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #f8fafc;
+    border-color: #94a3b8;
+}
+
+/* Result Area */
+#result {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #34d399; /* Emerald Green for success */
+    min-height: 1.5em;
+}
+
+/* Footer Style */
+body > p {
+    margin-top: 30px;
+    color: #475569;
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+#attempts {
+    color: #fbbf24;
+}
